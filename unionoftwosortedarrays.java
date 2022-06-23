@@ -5,13 +5,21 @@
 // Another appoach --> use set to add elements then copy the ele in list and then sort
 
 
+// BEST APPROACH ----> TC = O(N+M)
+// SC = O(1)
 
 
+// Algo --> 
+// if( ar[i] == b[j]){
+//     i++;
+//     j++;
+// }else if{
+//     a[i] < b[j]   i++;
+// }else {
+//     j++;
+// }
 
-
-BEST APPROACH ----> TC = O(N+M)
-SC = O(1)
-/*You have to complete union function and return an Arraylist which contains union elements of the two arrays*/
+// manage conditions of duplicate as well 
 public static ArrayList<Integer> union(int[] a,int[] b) {
     //write your code here
      ArrayList<Integer> list = new  ArrayList<Integer>();
