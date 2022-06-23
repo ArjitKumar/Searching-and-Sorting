@@ -88,4 +88,25 @@ public class findKclosest {
 }
 
 
+✔️ Solution - II (2-Pointers)
+
+We can initialize two pointers L=0 and R=n-1. Now our window size is n and contains excess elements. We will keep reducing the [L, R] window size till it becomes exactly equal to k. We can do this based on the condition - x - arr[L] <= arr[R] - x. If it is true, then it means arr[R] is farther away from x than arr[L] and thus we will eliminate arr[R]. Otherwise, we will eliminate arr[L].
+
+class Solution {
+
+    ArrayList<Integer> list = new ArrayList<>();
+    int L = 0, R = arr.length-1;
+   while (R - L >= k) 
+       if (x - arr[L] <= arr[R] - x) R--;
+       else L++;
+   for( int i = L ; i <= R ; i++) {
+       list.add( arr[i]);
+   }
+   return list;
+}
+
+Time Complexity : O(n-k), we will keep reducing the window size from initial n to final k which will require a total of n-k comparisons.
+Space Complexity : O(1)
+
+
 
