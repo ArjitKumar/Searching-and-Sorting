@@ -1,5 +1,5 @@
 
-// make triplets then do custom sorting
+// make triplets then do custom sorting according to the question
 
 
 static class mark implements Comparable<mark>{
