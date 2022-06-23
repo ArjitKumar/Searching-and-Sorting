@@ -7,6 +7,8 @@
     // Integers in each column are sorted in ascending from top to bottom.
 
 
+// TC ---> O(n+m)
+
 
 public class searchin2dmatrix-2 {
   
