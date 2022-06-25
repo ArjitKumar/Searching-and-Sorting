@@ -31,3 +31,43 @@
         }
     }
 
+
+
+
+    // The most optimised code
+
+    // This code is able to handle both leetcode 153 and 154( hard )
+
+
+    // Approach ---> 
+
+    // By default, if nums[lo]<nums[hi] then we return nums[lo] because the array was never rotated, or is rotated n times
+
+    // After entering while loop, we check
+    // if nums[mid] > nums[hi] => lo = mid + 1 because the minimum element is in the right half of the array
+    // else if nums[mid] < nums[hi] => hi = mid because the minimum element is in the left half of the array
+    // else => hi-- dealing with duplicate values
+    // then we return nums[hi]		
+
+    public int findMin(int[] arr) {
+        //write your code here
+       int lo = 0;
+       int hi = arr.length - 1;
+
+       if( arr[lo] < arr[hi]) {
+           return arr[lo];
+       }
+
+       while( lo <= hi) {
+           int mid = ( lo + hi) / 2;
+           if(arr[mid] > arr[hi]) {
+               lo = mid + 1;
+           }else if( arr[lo] > arr[mid]){
+               hi = mid;
+           }else{
+               hi--;
+           }
+       }
+       return arr[lo];
+   }
+
