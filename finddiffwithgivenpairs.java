@@ -19,6 +19,8 @@ public static void findPair(int[]arr,int target) {
         }else{
             i++;
         }
+        if( i == j) j++; // important condition agr i == j ho gya to true return krdega
+        
     }
     System.out.println(-1);
 }
